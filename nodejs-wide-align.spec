@@ -7,7 +7,7 @@
 
 Name:       %{?scl_prefix}nodejs-%{npm_name}
 Version:    1.1.0
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    A wide-character aware text alignment function for use on the console or with fixed width fonts
 License:    ISC
 URL:        https://github.com/iarna/wide-align
@@ -28,7 +28,7 @@ rm -rf node_modules
 
 %install
 mkdir -p %{buildroot}%{nodejs_sitelib}/%{npm_name}
-cp -pfr align.js package.json test %{buildroot}%{nodejs_sitelib}/%{npm_name}
+cp -pfr align.js package.json %{buildroot}%{nodejs_sitelib}/%{npm_name}
 # If any binaries are included, symlink them to bindir here
 
 
@@ -46,6 +46,9 @@ cp -pfr align.js package.json test %{buildroot}%{nodejs_sitelib}/%{npm_name}
 %doc README.md
 
 %changelog
+* Wed Jan 18 2017 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.1.0-3
+- Don't copy test dir
+
 * Tue Sep 20 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.1.0-2
 - Initial build
 
